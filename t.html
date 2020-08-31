@@ -1,0 +1,28 @@
+<h1>
+  hjshja,shjflh
+</h1><script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+countup();
+function countup (){
+    
+    
+$.ajax({
+    type: "GET", //　POSTでも可
+    url: "rec.php", //　送り先
+    //　渡したいデータ
+    dataType : "json", //　データ形式を指定
+    scriptCharset: 'utf-8' //　文字コードを指定
+})
+
+  .then(
+    function( param ){　 //　paramに処理後のデータが入ってる
+        console.log( param ); //　帰ってきたら実行する処理
+    },
+  
+  
+    function( XMLHttpRequest, textStatus, errorThrown ){
+        console.log( errorThrown ); //　エラー表示
+});
+   setTimeout(countup, 5000);
+  }
+</script>
